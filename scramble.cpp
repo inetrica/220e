@@ -56,3 +56,8 @@ int main(){
     }
     
 }
+
+//send back all lower case. it's all scrambled anyways, no point in fussing over grammar/capitalization
+std::string sort(std::string){
+    
+}
