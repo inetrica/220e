@@ -1,0 +1,8 @@
+https://www.reddit.com/r/dailyprogrammer/comments/3aqvjn/20150622_challenge_220_easy_mangling_sentences/
+
+challenge 220 Easy from subreddit r/dailyprogrammer
+
+coded in c++
+
+user inputs n words
+sort each word individually and print them back to the user
