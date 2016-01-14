@@ -41,11 +41,12 @@ strToLower(std::string word){
  */
 std::vector<std::string>
 getUserInput(){
-	std::string prompt = "Please enter a sentence:\n";
+	std::string prompt = "Please enter a sentence:";
     std::string input;
+	std::string quit("q");
 
     //get user input
-    std::cout << prompt;
+    std::cout << prompt << std::endl;
     std::getline(std::cin, input);
 
     std::vector<std::string> words;
@@ -56,6 +57,11 @@ getUserInput(){
 		str = strToLower(str);
 		words.push_back(str);
 		word = strtok(NULL, " ");
+	}
+
+	if(words.size() == 1 && words[0].compare(quit) == 0){
+		std::cout << "exiting..." << std::endl;
+		exit(0);
 	}
 
 	return words;
@@ -77,14 +83,18 @@ sort(std::vector<std::string> words){
 
 int main(){
     std::vector<std::string> words;
+	std::cout << "Quit by entering \"q\"" << std::endl;
 
-	words = getUserInput();
-    std::cout << "\n";
+    while(1){
 
-	words = sort(words);
-    for(unsigned int i = 0; i < words.size(); i++){
-        std::cout << words[i] + "\n";
-    }
+		words = getUserInput();
+
+		words = sort(words);
+		for(unsigned int i = 0; i < words.size(); i++){
+			std::cout << words[i] + " ";
+		}
+		std::cout << std::endl;
+	}
 
     return 0;
     
